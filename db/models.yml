@@ -1,0 +1,27 @@
+State
+  id: integer
+  state_name: string
+  state_abbrev: string
+  
+City
+  id: integer
+  state_id: integer
+  city_name: string
+  city_abbrev: string
+
+Carrier
+  id: integer
+  name: string
+  mc_number: integer
+  dot_number: integer
+  
+CarrierLocation
+  id: integer
+  carrier_id: integer
+  street_addr: string
+  street_addr2: string
+  city: integer
+  state: integer
+  zip: integer
+  
+
