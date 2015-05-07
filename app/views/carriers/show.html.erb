@@ -1,0 +1,14 @@
+<style>
+  label { width: 75px; vertical-align: middle;}
+  h2 {border-bottom: solid 2px gray;
+	  margin-bottom: 20px;}
+</style>
+
+<h2><%= @carrier.name %> Details</h2>
+
+<p>MC Number: <%= @carrier.mc_number %></p>
+<p>DOT Number: <%= @carrier.dot_number %></p>
+
+<%= link_to "Edit", "/carriers/#{@carrier.id}/edit" %>
+
+

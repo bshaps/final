@@ -1,0 +1,14 @@
+<style>
+  label { width: 75px; vertical-align: middle;}
+  h2 {border-bottom: solid 2px gray;
+	  margin-bottom: 20px;}
+</style>
+
+<h2>Edit Carrier Details</h2>
+
+<%= form_tag "/carriers/#{@carrier.id}", :method => 'patch' do %>
+  <p><label>Name:</label> <input value="<%= @carrier.name %>" name="name" size="50"></p>
+  <p><label>MC Number:</label> <input value="<%= @carrier.mc_number %>" name="mcnum" size="10"></p>
+  <p><label>DOT Number:</label> <input value="<%= @carrier.dot_number %>" name="dotnum" size="10"></p>
+  <p><button>Submit</button></p>
+<% end %>

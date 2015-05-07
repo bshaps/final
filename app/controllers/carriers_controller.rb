@@ -1,7 +1,7 @@
 class CarriersController < ApplicationController
 
 	def index
-		@carrier = Carrier.all
+		@carriers = Carrier.all
 	end
 	
 	def show
