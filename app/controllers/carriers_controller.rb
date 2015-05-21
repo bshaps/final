@@ -4,6 +4,11 @@ class CarriersController < ApplicationController
 		@carriers = Carrier.all
 	end
 	
+	def new
+		@carrier = Carrier.new
+		render 'new'
+	end
+	
 	def show
 		@carrier = Carrier.find(params[:id])
 		if @carrier == nil
@@ -12,13 +17,17 @@ class CarriersController < ApplicationController
 	end
 	
 	def create
-		carrier = Carrier.new
-		carrier.name = params[:name]
-		carrier.mc_number = params[:mcnum]
-		carrier.dot_number = params[:dotnum]
-		carrier.save	
-
-		redirect_to carriers_url, notice: "Carrier created"
+		@carrier = Carrier.new
+		@carrier.name = params[:name]
+		@carrier.mc_number = params[:mcnum]
+		@carrier.dot_number = params[:dotnum]
+		
+		if @carrier.save
+			redirect_to carriers_url, notice: "Carrier created"
+		else
+			render 'new'
+		end
+		
 	end
 	
 	def edit

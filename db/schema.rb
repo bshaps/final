@@ -38,6 +38,12 @@ ActiveRecord::Schema.define(version: 0) do
 
   add_index "cities", ["state_id"], name: "index_cities_on_state_id"
 
+  create_table "drivers", force: true do |t|
+    t.string  "name"
+    t.decimal "last_lat"
+    t.decimal "last_long"
+  end
+
   create_table "states", force: true do |t|
     t.string "state_name"
     t.string "state_abbrev"

@@ -24,4 +24,9 @@ CarrierLocation
   state: integer
   zip: integer
   
+Driver
+  id: integer
+  name: string
+  last_lat: decimal
+  last_long: decimal 
 
