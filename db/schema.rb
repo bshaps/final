@@ -31,9 +31,9 @@ ActiveRecord::Schema.define(version: 0) do
   end
 
   create_table "cities", force: true do |t|
+    t.integer "state_id"
     t.string  "city_name"
     t.string  "city_abbrev"
-    t.integer "state_id"
   end
 
   add_index "cities", ["state_id"], name: "index_cities_on_state_id"
@@ -42,11 +42,23 @@ ActiveRecord::Schema.define(version: 0) do
     t.string  "name"
     t.decimal "last_lat"
     t.decimal "last_long"
+    t.integer "carrier_id"
   end
+
+  add_index "drivers", ["carrier_id"], name: "index_drivers_on_carrier_id"
 
   create_table "states", force: true do |t|
     t.string "state_name"
     t.string "state_abbrev"
   end
+
+  create_table "users", force: true do |t|
+    t.string  "name"
+    t.string  "email"
+    t.string  "password_digest"
+    t.integer "carrier_id"
+  end
+
+  add_index "users", ["carrier_id"], name: "index_users_on_carrier_id"
 
 end

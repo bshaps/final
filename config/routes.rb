@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
   root 'carriers#index'
   
-  get '/carriers/new' => 'carriers#new'
-  post '/carriers' => 'carriers#create'
-  get '/carriers' => 'carriers#index'
-  get '/carriers/:id' =>  'carriers#show', :as => 'carrier'
-  get '/carriers/:id/edit' => 'carriers#edit'
-  patch '/carriers/:id' => 'carriers#update'
-  delete '/carriers/:id' => 'carriers#destroy'
+  get '/users/:user_id' => 'users#show', as: :user
+  get '/register' => 'users#new'
+  post '/users' => 'users#create'
 
+  get '/login' => 'sessions#new'
+  get '/logout' => 'sessions#destroy'
+  post '/sessions' => 'sessions#create'
+
+  resources :carriers
+  
 end
