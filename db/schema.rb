@@ -17,12 +17,14 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "carrier_id"
     t.string  "street_addr"
     t.string  "street_addr2"
-    t.integer "city"
-    t.integer "state"
+    t.integer "city_id"
+    t.integer "state_id"
     t.integer "zip"
   end
 
   add_index "carrier_locations", ["carrier_id"], name: "index_carrier_locations_on_carrier_id"
+  add_index "carrier_locations", ["city_id"], name: "index_carrier_locations_on_city_id"
+  add_index "carrier_locations", ["state_id"], name: "index_carrier_locations_on_state_id"
 
   create_table "carriers", force: true do |t|
     t.string  "name"
@@ -53,7 +55,6 @@ ActiveRecord::Schema.define(version: 0) do
   end
 
   create_table "users", force: true do |t|
-    t.string  "name"
     t.string  "email"
     t.string  "password_digest"
     t.integer "carrier_id"

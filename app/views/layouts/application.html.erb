@@ -17,10 +17,11 @@
 <body>
   <div class="container">
 
-    <h1>BridgeHaul &emsp;<small>Welcome Back!</small>
+    <h1>BridgeHaul 
       <div class="pull-right">
       <% if session["user_id"].present? %>
-        <small><%= User.find_by(id: session["user_id"]).name %></small>
+		<small>Welcome Back!</small>&emsp;
+		<small><%= link_to "Drivers", '/' %></small>
         <small><%= link_to "My Account", user_path(User.find_by(id: session["user_id"])) %></small>
         <small><%= link_to "Sign Out", '/logout' %></small>
       <% else %>

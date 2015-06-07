@@ -1,5 +1,4 @@
 User
-  name: string
   email: string
   password_digest: string
   carrier_id: integer
@@ -22,8 +21,8 @@ CarrierLocation
   carrier_id: integer
   street_addr: string
   street_addr2: string
-  city: integer
-  state: integer
+  city_id: integer
+  state_id: integer
   zip: integer
   
 Driver

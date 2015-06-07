@@ -1,6 +1,6 @@
 class State < ActiveRecord::Base
 
-	has_many :cities
+	has_many :citys
 	
 	validates_presence_of :state_name
 

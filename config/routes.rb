@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'carriers#index'
+  root 'drivers#index'
   
   get '/users/:user_id' => 'users#show', as: :user
   get '/register' => 'users#new'
@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
   post '/sessions' => 'sessions#create'
 
-  resources :carriers
+  resources :drivers
   
 end

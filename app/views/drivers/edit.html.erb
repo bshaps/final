@@ -1,0 +1,14 @@
+<style>
+  label { width: 75px; vertical-align: middle;}
+  h2 {border-bottom: solid 2px gray;
+	  margin-bottom: 20px;}
+</style>
+
+<h2>Edit Driver Details</h2>
+
+<%= form_tag "/drivers/#{@driver.id}", :method => 'patch' do %>
+  <p><label>Name:</label> <input value="<%= @driver.name %>" name="name" size="50"></p>
+  <p><label>Last Known Latitude:</label> <input value="<%= @driver.last_lat %>" name="last_lat" size="10"></p>
+  <p><label>Last Known Longitude:</label> <input value="<%= @driver.last_long %>" name="last_long" size="10"></p>
+  <p><button>Submit</button></p>
+<% end %>

@@ -5,19 +5,19 @@
   li { color: red; }
 </style>
 
-<h2>Add a Carrier</h2>
+<h2>Add a Driver</h2>
 
-<% if @carrier.errors.any? %>
+<% if @driver.errors.any? %>
   <ul>
-    <% @carrier.errors.full_messages.each do |error| %>
+    <% @driver.errors.full_messages.each do |error| %>
 	  <li>Field Entry Error: <%= error %></li>
 	<% end %>
   </ul>
 <% end %>
 
-<%= form_tag "/carriers" do %>
+<%= form_tag "/drivers" do %>
   <p><label>Name:</label> <input name="name" size="50"></p>
-  <p><label>MC Number:</label> <input name="mcnum" size="10"></p>
-  <p><label>DOT Number:</label> <input name="dotnum" size="10"></p>
+  <p><label>Last Known Latitude:</label> <input name="last_lat" size="10"></p>
+  <p><label>Last Known Longitude:</label> <input name="last_long" size="10"></p>
   <p><button>Submit</button></p>
 <% end %>
