@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   post '/sessions' => 'sessions#create'
 
   resources :drivers
+  resources :reset_passwords
   
 end

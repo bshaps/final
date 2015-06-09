@@ -12,7 +12,7 @@
 		<%= text_field_tag :email %>
 	</p>
 	<p>
-		<%= label_tag :password, "Password:" %>
+		<%= label_tag :password, "Password:" %>(<%= link_to "Forgot Password", '/reset_passwords/new' %>)
 		<%= password_field_tag :password %>
 	</p>
 	<%= submit_tag "Submit" %>

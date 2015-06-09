@@ -2,6 +2,7 @@ User
   email: string
   password_digest: string
   carrier_id: integer
+  reset_password_token: string
 
 State
   state_name: string

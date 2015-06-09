@@ -7,5 +7,10 @@ class User < ActiveRecord::Base
 	validates :password, :presence => true, :confirmation => true
 	validates :carrier_id, :presence => true
 	
+	def reset_password
+		self.reset_password_token = SecureRandom.urlsafe_base64.to_s
+		self.save
+		UserMailer.reset_password_email(self).deliver
+	end
 
 end

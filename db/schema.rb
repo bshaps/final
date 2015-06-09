@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20150609041050) do
     t.string  "email"
     t.string  "password_digest"
     t.integer "carrier_id"
+    t.string  "reset_password_token"
   end
 
   add_index "users", ["carrier_id"], name: "index_users_on_carrier_id"
