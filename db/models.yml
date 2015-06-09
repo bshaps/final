@@ -30,4 +30,8 @@ Driver
   last_lat: decimal
   last_long: decimal 
   carrier_id: integer
+  
+Tractor
+  name: string
+  max_weight: integer
 

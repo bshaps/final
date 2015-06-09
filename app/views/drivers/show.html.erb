@@ -1,13 +1,14 @@
 <style>
   label { width: 75px; vertical-align: middle;}
   h2 {border-bottom: solid 2px gray;
-	  margin-bottom: 20px;}
+	  text-decoration: underline;
+	  margin-bottom: 10px;}
 </style>
 
-<h2><%= @driver.name %> Details</h2>
+<h4><%= @driver.name %> Details</h4>
 
-<p>MC Number: <%= @driver.mc_number %></p>
-<p>DOT Number: <%= @driver.dot_number %></p>
+<p>Last Known Latitude: <%= @driver.last_lat %></p>
+<p>Last Known Longitude: <%= @driver.last_long %></p>
 
 <%= link_to "Edit", "/drivers/#{@driver.id}/edit" %>
 

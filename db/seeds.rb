@@ -28,3 +28,11 @@ CarrierLocation.create(id: 3, carrier_id: 1, street_addr: '6577 Celebrity Ave', 
 CarrierLocation.create(id: 4, carrier_id: 3, street_addr: '2421 Palm Drive', street_addr2: nil, city_id: 6, state_id: 5, zip: 33102)
 CarrierLocation.create(id: 5, carrier_id: 4, street_addr: '664 5th Ave', street_addr2: 'Suite 6410', city_id: 5, state_id: 4, zip: 10019)
 CarrierLocation.create(id: 6, carrier_id: 5, street_addr: '522 Relax Lane', street_addr2: nil, city_id: 7, state_id: 3, zip: 94108)
+
+#Tractors
+Tractor.create(id: 1, name: 'Flat Bed', max_weight: 48000)
+Tractor.create(id: 2, name: 'Dry Van', max_weight: 42000)
+Tractor.create(id: 3, name: 'Refrigerated', max_weight: 43000)
+Tractor.create(id: 4, name: 'Lowboy', max_weight: 40000)
+Tractor.create(id: 5, name: 'Step Deck', max_weight: 48000)
+Tractor.create(id: 6, name: 'Extendable Flatbed', max_weight: 43000)

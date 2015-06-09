@@ -1,14 +1,40 @@
 <style>
-  label { width: 75px; vertical-align: middle;}
+  label { width: 85px; vertical-align: middle;}
   h2 {border-bottom: solid 2px gray;
 	  margin-bottom: 20px;}
 </style>
 
 <h2>Edit Driver Details</h2>
 
-<%= form_tag "/drivers/#{@driver.id}", :method => 'patch' do %>
-  <p><label>Name:</label> <input value="<%= @driver.name %>" name="name" size="50"></p>
-  <p><label>Last Known Latitude:</label> <input value="<%= @driver.last_lat %>" name="last_lat" size="10"></p>
-  <p><label>Last Known Longitude:</label> <input value="<%= @driver.last_long %>" name="last_long" size="10"></p>
-  <p><button>Submit</button></p>
+<%= form_tag "/drivers/#{@driver.id}", :method => 'patch' do %>  
+  <p>
+    <%= label_tag :name, "Name:" %>
+	<%= text_field_tag :name, @driver.name %>
+  </p>
+  <p>
+	<%= label_tag :last_lat, "Last Known Latitude:" %>
+	<%= text_field_tag :last_lat, @driver.last_lat %>
+  </p>
+  <p>
+	<%= label_tag :last_long, "Last Known Longitude:" %>
+	<%= text_field_tag :last_long, @driver.last_long %>
+  </p>
+  <h4>Equipment</h4> (Select all that apply)<br/><br/>
+  <p>
+	<%= label_tag :flat_bed, "Flat Bed" %>
+    <%= check_box_tag :flat_bed %>&emsp;&emsp;
+	<%= label_tag :dry_van, "Dry Van" %>
+    <%= check_box_tag :dry_van %>&emsp;&emsp;
+	<%= label_tag :refrigerated, "Refrigerated" %>
+    <%= check_box_tag :refrigerated %>
+  </p>
+  <p>
+	<%= label_tag :lowboy, "Lowboy" %>
+    <%= check_box_tag :lowboy %>&emsp;&emsp;
+	<%= label_tag :step_deck, "Step Deck" %>
+    <%= check_box_tag :step_deck %>&emsp;&emsp;
+	<%= label_tag :extendable_flatbed, "Extendable Flatbed" %>
+    <%= check_box_tag :extendable_flatbed %>
+  </p>
+  <%= submit_tag "Submit" %>
 <% end %>

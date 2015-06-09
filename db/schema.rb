@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150609041050) do
 
   create_table "carrier_locations", force: true do |t|
     t.integer "carrier_id"
@@ -49,9 +49,19 @@ ActiveRecord::Schema.define(version: 0) do
 
   add_index "drivers", ["carrier_id"], name: "index_drivers_on_carrier_id"
 
+  create_table "drivers_tractors", force: true do |t|
+    t.integer "driver_id"
+    t.integer "tractor_id"
+  end
+
   create_table "states", force: true do |t|
     t.string "state_name"
     t.string "state_abbrev"
+  end
+
+  create_table "tractors", force: true do |t|
+    t.string  "name"
+    t.integer "max_weight"
   end
 
   create_table "users", force: true do |t|
