@@ -1,1 +1,22 @@
+<style>
+  h5 {margin-top: 20px}
+  h4 {margin-bottom: 3px; margin-top: 3px;} 
+  h3 {text-decoration: underline;
+	  margin-top: 20px;}
+  p {margin-top: 15px; margin-bottom: 30px;}
+</style>
+
 <h2>Your Account</h2>
+
+<h5>MC Number: <%= @carrier.mc_number %></h5>
+<h5>DOT Number: <%= @carrier.dot_number %></h5>
+<h3>Locations</h3>
+<% if @locations.any? %>
+	<% @locations.each do |location| %>
+		<p>
+			<h4><%= location.street_addr %></h4>
+			<h4><%= location.street_addr2 %></h4>
+			<h4><%= City.find_by(id: location.city_id).city_name %>, <%= State.find_by(id: location.state_id).state_abbrev %>&emsp;<%= location.zip %></h4>
+		</p>
+	<% end %>
+<% end %>

@@ -23,7 +23,8 @@ class UsersController < ApplicationController
 	end
 	
 	def show
-		
+		@carrier = Carrier.find_by(id: User.find_by(id: params[:user_id]).carrier_id)
+		@locations = CarrierLocation.where("carrier_id = ?", @carrier.id)
 	end
 	
 	def authorization

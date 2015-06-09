@@ -10,6 +10,15 @@
 <p>Last Known Latitude: <%= @driver.last_lat %></p>
 <p>Last Known Longitude: <%= @driver.last_long %></p>
 
+<h4>Equipment</h4>
+<% if @driver.tractors.any? %>
+	<ul>
+		<% @driver.tractors.each do |tractor| %>
+			<li><%= tractor.name %></li>
+		<% end %>
+	</ul>
+<% end %>
+
 <%= link_to "Edit", "/drivers/#{@driver.id}/edit" %>
 
 
