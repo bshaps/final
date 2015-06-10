@@ -4,11 +4,11 @@ class User < ActiveRecord::Base
 
 	has_secure_password
 	validates :email, :uniqueness => true, :allow_nil => false
-	validates :password, :presence => true, :confirmation => true
-	validates :carrier_id, :presence => true
+	validates :password, :allow_nil => false, :confirmation => true 
+	#I removed presence because it was breaking the save in reset_password
 	
 	def reset_password
-		self.reset_password_token = SecureRandom.urlsafe_base64.to_s
+		self.update(reset_password_token: SecureRandom.urlsafe_base64.to_s)
 		self.save
 		UserMailer.reset_password_email(self).deliver
 	end

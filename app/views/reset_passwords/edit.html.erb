@@ -1,0 +1,22 @@
+<% if @user.errors.any? %>
+<ul class="errors">
+	<% @user.errors.full_messages.each do |m| %>
+		<li>Error: <%= m %></li>
+	<% end %>
+</ul>
+<% end %>
+
+<h2>Set New Password</h2>
+<% puts @user.id %>
+<%= form_tag "/reset_passwords/#{@user.reset_password_token}", :method => 'patch' do %>
+	<p>
+		<%= label_tag :password, "Password:" %>
+		<%= password_field_tag :password %>
+	</p>
+	<p>
+		<%= label_tag :password_confirmation, "Confirm Password:" %>
+		<%= password_field_tag :password_confirmation %>
+	</p>
+	<%= submit_tag "Set New Password" %>
+<% end %>
+

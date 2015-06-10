@@ -20,9 +20,22 @@ class ResetPasswordsController < ApplicationController
 	end
 	
 	def edit
+		@user = User.find_by(reset_password_token: params[:id])
+		if !@user
+			redirect_to root_url, notice: "Invalid token"
+		end	
 	end
 	
 	def update
+		@user = User.find_by(reset_password_token: params[:id])
+		if @user
+			@user.password = params[:password]
+			@user.password_confirmation = params[:password_confirmation]
+			@user.save!
+			redirect_to root_url, notice: "Password Reset"
+		else
+			redirect_to root_url, notice: "Error resetting password"
+		end
 	end
 
 end
